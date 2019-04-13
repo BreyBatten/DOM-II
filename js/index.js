@@ -5,13 +5,18 @@
 //     document.body.style.background = `url(${imageSource})`
 // });
 
-const funBus = document.querySelector('.nav');
-funBus.addEventListener('mouseover', function(event){
+const navItems = document.querySelector('.nav');
+
+navItems.addEventListener('mouseover', function(event){
     event.target.style.color = 'lightblue';
 });
 
+navItems.addEventListener('mouseout', function(event){
+    event.target.style.color = 'black';
+});
+
 const welcome = document.querySelector('.intro h2');
-welcome.addEventListener('dblclick', function(event){
+welcome.addEventListener('click', function(event){
     event.target.style.color = 'gold';
 });
 
@@ -25,10 +30,15 @@ item.animate([
     {transform: 'scale(.5) rotate(360deg)', opacity: .5},
     {transform: 'scale(1) rotate(0deg)', opacity: 1},
 ], {
-    duration: 2000,
+    duration: 2500,
     easing: 'ease-in-out',
     delay: 10,
     iterations: 1,
     direction: 'alternate',
     fill: 'forwards'
+});
+
+const input = document.querySelector('body');
+input.addEventListener('keydown', function(event){
+    console.log(event);
 });
