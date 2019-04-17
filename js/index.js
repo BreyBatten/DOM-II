@@ -1,9 +1,8 @@
 // Your code goes here
-// const topImg = document.querySelector('.intro img');
-// topImg.addEventListener('mouseover', function(event){
-//     const imageSource = event.target.src;
-//     document.body.style.background = `url(${imageSource})`
-// });
+const topImg = document.querySelector('.intro img');
+topImg.addEventListener('dblclick', function(event){
+    document.body.style.background = 'tan';
+});
 
 const navItems = document.querySelector('.nav');
 
@@ -41,4 +40,17 @@ item.animate([
 const input = document.querySelector('body');
 input.addEventListener('keydown', function(event){
     console.log(event);
+});
+
+const wholeContainer = document.querySelector('.container', '.home');
+
+wholeContainer.addEventListener('click', function(event){
+    console.log('Clicked on the header');
+});
+
+const list = document.querySelector('.nav-link');
+
+list.addEventListener('click', function(event){
+    event.stopPropagation()
+    console.log('Clicked the "Home" nav item');
 });
